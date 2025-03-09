@@ -1,4 +1,4 @@
-uvoid outer(String name, String id) {
+void outer(String name, String id) {
   String inner() {
     var splitter = name.split(" ");
     var alias = splitter[1].substring(0, 1) + "." + splitter[0];
