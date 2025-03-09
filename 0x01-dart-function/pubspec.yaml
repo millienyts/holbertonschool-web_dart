@@ -1,0 +1,11 @@
+name: holbertonschool_web_dart
+description: A Dart project for various functions and algorithms.
+version: 1.0.0
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+dependencies:
+  # Add your dependencies here
+dev_dependencies:
+  # Add your development dependencies here
+flutter:
+  uses-material-design: true
