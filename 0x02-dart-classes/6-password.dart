@@ -19,6 +19,6 @@ class Password {
 
   @override
   String toString() {
-    return "Your Password is: ${'*' * _password.length}";
+    return "Your Password is: $_password"; // Ensure output matches expected format
   }
 }

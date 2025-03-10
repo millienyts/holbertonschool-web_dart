@@ -22,6 +22,7 @@ class User extends Password {
       'name': name,
       'age': age,
       'height': height,
+      'user_password': _userPassword, // Ensure it's included
     };
   }
 
@@ -30,7 +31,9 @@ class User extends Password {
       id: userJson['id'] ?? 0,
       name: userJson['name'] ?? 'Unknown',
       age: userJson['age'] ?? 0,
-      height: (userJson['height'] ?? 0.0).toDouble(),
+      height: (userJson['height'] is int)
+          ? (userJson['height'] as int).toDouble()
+          : (userJson['height'] ?? 0.0),
       user_password: userJson['user_password'] ?? '',
     );
   }
@@ -39,7 +42,7 @@ class User extends Password {
 
   set user_password(String newPassword) {
     _userPassword = newPassword;
-    super.password = newPassword; // Ensure superclass is updated
+    password = newPassword; // Ensure superclass password is updated
   }
 
   @override
