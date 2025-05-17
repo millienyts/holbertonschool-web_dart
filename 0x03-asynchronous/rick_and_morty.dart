@@ -6,14 +6,14 @@ Future<void> printRmCharacters() async {
     final response = await http.get(Uri.parse('https://rickandmortyapi.com/api/character'));
 
     if (response.statusCode == 200) {
-      Map<String, dynamic> jsonData = jsonDecode(response.body);
-      List<dynamic> characters = jsonData['results'];
+      final Map<String, dynamic> jsonData = jsonDecode(response.body);
+      final List<dynamic> characters = jsonData['results'];
 
       for (var character in characters) {
         print(character['name']);
       }
     } else {
-      throw Exception('Failed to load characters with status code: ${response.statusCode}');
+      print('error caught: Failed to load characters with status code ${response.statusCode}');
     }
   } catch (err) {
     print('error caught: $err');
